@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <title>note live</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="//cdn.bootcss.com/lodash.js/4.17.10/lodash.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link href="./assets/main-7ac1.css" rel="stylesheet"></head>
+
+
+<body id="body">
+<br/>
+
+<!--<br/>-->
+<div id="password_div" class="password" style="display: none">
+    <div style="margin-top: 10px">
+        <label id="password_tip" for="password" style="color: black">输入密码：</label>
+        <input id="password" maxlength="8" type="password">
+        <button id="password_btn">确认</button>
+    </div>
+</div>
+<div id="new_password_div" class="password" style="height: 100px;display: none">
+    <div style="float: right;margin-right: 10px">
+        <span id="new_password_cancel" style="color:lightsalmon;font-size: 20px ;cursor: pointer">X</span>
+    </div>
+    <div style="margin-top: 10px;text-align: left;margin-left: 10px">
+        <div>
+        <label for="lockType" title="可读模式无需输入密码即可查阅但是无法修改">加密模式(?)：</label>
+        <select id="lockType">
+            <option value="rw">私有</option>
+            <option value="-w">可读</option>
+        </select>
+        </div>
+        <div style="margin-top: 10px">
+        <label id="new_password_tip" for="new_password"
+               style="color: black;margin-left: 5px">
+            输入新密码（留空删除密码）：</label>
+        <input id="new_password" maxlength="8" style="margin-left: 70px" type="password">
+        <button id="new_password_btn" style="margin-left: 20px">修改</button>
+        </div>
+    </div>
+</div>
+
+<div class="toolbar">
+    <span id="tip" style="width: 200px;">&emsp;</span>
+    <span style="margin-left: 20px">
+        <span>
+            <label for="contentType">内容类型：</label><select id="contentType">
+                <option value="txt">txt</option>
+                <option value="json">json</option>
+                <option value="html">html</option>
+            </select>
+        </span>
+        <span style="margin-left: 30px">
+            render api：&emsp;
+            <a id="api_url" style="color: black" target="_blank"></a>
+        </span>
+    </span>
+</div>
+<div class="stack ">
+    <div class="layer_1">
+        <div class="layer_2">
+            <div id="content_div" class="layer_3">
+                <textarea id="content" class="contents " spellcheck="true"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+<br/>
+<div id="controls">
+    <a id="render_markdown" href="markdown/{anchor}" target="_blank">Markdown渲染</a>
+    <a id="render_html" href="html/{anchor}" target="_blank">Html渲染</a>
+    <a href="html/#help" target="_blank">帮助与关于</a>
+    <a id="modify_password" href="javascript:">修改密码</a>
+</div>
+
+<script type="text/javascript" src="js/main-7ac1.js"></script></body>
+</html>
